@@ -1,73 +1,67 @@
-#empty dictionary
+# Contact Book App
 
-contacts = {}
+A simple command-line contact book built with Python. It lets you create, view, update, delete, search, and count contacts from an interactive menu.
 
-while True:
-    print("\nContact Book App")
-    print('1: Create Contact')
-    print('2: View Contacts')
-    print('3: Update Contact')
-    print('4: Delete Contact')
-    print('5: Search Contact')
-    print('6: Count Contacts')
-    print('7: Exit')
+## Features
 
-    choice = input('Enter your choice(1-7) = ')
+- Create new contacts with name, age, email, and mobile number.
+- View saved contact details by name.
+- Update an existing contact.
+- Delete a contact.
+- Search contacts by partial name match.
+- Display the total number of saved contacts.
 
-    if choice == '1':
-        name = input('Enter your name = ')
-        if name in contacts:
-            print(f'Contact name {name} already exists!')
-        else:
-            age = input('Enter your age = ')
-            email = input('Enter your email = ')
-            mobile = input('Enter your mobile number = ')
-            contacts[name] = {'age':int(age), 'email':email, 'mobile':mobile}
-            print(f'Contact {name} has been created successfully!')
+## Requirements
 
+- Python 3.10 or later
 
-    elif choice == '2':
-        name = input('Enter contact name to view = ')
-        if name in contacts:
-            contact = contacts[name]
-            print(f'Name:{name}, Age:{age}, Mobile Number:{mobile}')
-        else:
-            print('Contact not found!')
+## How To Run
 
-    elif choice == '3':
-        name = input('Enter contact name to update = ')
-        if name in contacts:
-            age = input('Enter updated age = ')
-            email = input('Enter updated email = ')
-            mobile = input('Enter updated mobile number = ')
-            contacts[name] = {'age':int(age), 'email':email, 'mobile':mobile}
-        else:
-            print('Contact not found!')
+From the project folder, run:
 
-    elif choice == '4':
-        name = input('Enter contact name to delete = ')
-        if name in contacts:
-            del contacts[name]
-            print(f'Contact {name} has been deleted successfully!')
-        else:
-            print('Contact not found!')
+```bash
+python contact.py
+```
 
-    elif choice == '5':
-        search_name = input('Enter contact name to search = ')
-        found = False
-        for name, contact in contacts.items():
-            if search_name.lower() in name.lower():
-                print(f'Found - Name:{name}, Age:{age}, Email:{email}, Mobile Number:{mobile}')
-                found = True
-        if not found:
-            print('No contact found with that name!')
+If your system uses multiple Python versions, you may need to use `python3` instead.
 
-    elif choice == '6':
-        print(f'Total contacts: {len(contacts)}') 
+## Usage
 
-    elif choice == '7':
-        print('Goodbye..... Closing the program!')
-        break
+After starting the program, choose an option from the menu:
 
-    else:
-        print('Invalid Input!')
+1. Create Contact
+2. View Contacts
+3. Update Contact
+4. Delete Contact
+5. Search Contact
+6. Count Contacts
+7. Exit
+
+Follow the prompts to enter the requested information.
+
+## Project Structure
+
+```text
+Contact Book App/
+├── contact.py
+└── README.md
+```
+
+## Notes
+
+- Contacts are stored in memory only, so all data is lost when the program exits.
+- Search is case-insensitive and matches partial names.
+- Age is stored as a number.
+
+## Example
+
+```text
+Contact Book App
+1: Create Contact
+2: View Contacts
+3: Update Contact
+4: Delete Contact
+5: Search Contact
+6: Count Contacts
+7: Exit
+```
